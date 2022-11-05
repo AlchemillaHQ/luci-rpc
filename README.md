@@ -5,7 +5,7 @@ A simple RPC communication library for the JSON LUCI RPC API.
 ## Example
 
 ```js
-const { LUCI } = require('./lib/luci')
+const { LUCI } = require('luci-rpc')
 
 async function main() {
     const luci = new LUCI('https://192.168.1.2', 'root', 'x')
