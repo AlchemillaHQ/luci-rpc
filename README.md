@@ -8,10 +8,9 @@ A simple RPC communication library for the JSON LUCI RPC API.
 const { LUCI } = require('luci-rpc')
 
 async function main() {
-    const luci = new LUCI('https://192.168.1.1', 'root', 'x')
+    const luci = new LUCI('https://192.168.1.2', 'root', 'x')
 
     await luci.init()
-
     let updateInterval = 1000 * 60 * 30
     luci.autoUpdateToken(updateInterval);
 
@@ -22,6 +21,7 @@ async function main() {
     console.log(await luci.getChangedSections())
     console.log(await luci.getChanges())
     console.log(await luci.commit("network"))
+    console.log(await luci.commitSpecific(["network", "lan"]))
 }
 
 main()

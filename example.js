@@ -5,9 +5,6 @@ async function main() {
 
     await luci.init()
 
-    let updateInterval = 1000 * 60 * 30
-    luci.autoUpdateToken(updateInterval);
-
     console.log(await luci.getAll("network"))
     console.log(await luci.get(["network", "@device[0]", "ports"]))
 
@@ -15,6 +12,7 @@ async function main() {
     console.log(await luci.getChangedSections())
     console.log(await luci.getChanges())
     console.log(await luci.commit("network"))
+    console.log(await luci.commitSpecific(["network", "lan"]))
 }
 
 main()
