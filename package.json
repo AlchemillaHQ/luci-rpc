@@ -1,6 +1,6 @@
 {
   "name": "luci-rpc",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A package that helps communicate with the luci-mod-rpc interface",
   "main": "index.js",
   "scripts": {
